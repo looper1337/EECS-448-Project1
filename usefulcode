@@ -1,0 +1,59 @@
+
+        //shot
+        System.out.println("Enter the position you want to shot (row and col) ");
+        int row=s.nextInt();
+        int col=s.nextInt();
+        for (int x=1;x<=row;x++)
+        {
+            for (int y=1;y<=col;y++)
+            {
+                x=row;
+                y=col;
+
+                shot[x][y]=1;
+            }
+        }
+  ship[i][j]=ship+1
+  if = 2, invalid
+
+
+          // print map after attacked
+       	for(int i=1;i<=9;i++)
+		{
+			for(int j=1;j<=9;j++)
+			{
+                if(ship[i][j]==shot[i][j]&&shot[i][j]!=0)
+                {
+                    System.out.print("X  ");
+                    hit=hit+1;
+                }
+                else if(ship[i][j]!=shot[i][j]&&shot[i][j]!=0)
+                {
+                    System.out.print("*  ");
+                    miss=miss+1;
+                }
+                else if(ship[i][j]==1)
+                {
+                    System.out.print("#  ");
+                }
+                else
+                {
+                    System.out.print("0  ");
+                }
+ 			
+			}
+			System.out.println();
+
+		}
+    }
+
+
+    //gameover
+    for (int i=1;i<=ShipNum;i++)
+    {
+        des=des+i
+        if(hit==des)
+        {
+            System.out.println("Gameover")
+        }
+    }
