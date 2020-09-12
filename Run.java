@@ -65,7 +65,7 @@ public class Run
                     {
                         for (int a=row1;a<=row1;a++)
                         {
-                            for (int b=col1;b<=col1+ShipNum-1;b++)
+                            for (int b=col1;b<=col1+x-1;b++)
                             {
                                 ship[a][b]=ship[a][b]+1;                       
                             }
@@ -73,7 +73,7 @@ public class Run
                     }
                     else if (type==2)
                     {
-                        for (int a=row1;a<=row1+ShipNum-1;a++)
+                        for (int a=row1;a<=row1+x-1;a++)
                         {
                             for (int b=col1;b<=col1;b++)
                             {
