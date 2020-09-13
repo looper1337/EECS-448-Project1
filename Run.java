@@ -419,9 +419,9 @@ public class Run
                 }
  			
 			}
-			System.out.println("hit time:"+ p1hit);
+			System.out.println();
 		}
-        System.out.println("hit time:"+ p1hit);
+        System.out.println();
 //----------------------------------------------------------------------------------------------------
     //player2's turned to shot
     //shot
@@ -473,11 +473,11 @@ public class Run
                 }
                 System.out.println();
             }
-            System.out.println("hit times:"+p2hit );
-        }
-        else if (p1hit==des || p2hit==des)
-        {
-            break;
+            System.out.println();
+            if(p2hit==des)
+            {
+                break;
+            }
         }
     }
 //-------------------------------------------------------------------------------------- 
