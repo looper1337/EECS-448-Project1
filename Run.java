@@ -97,7 +97,6 @@ public class Run
                         System.out.println(" ship (row and col)");
                         row1=s.nextInt();
                         col1=s.nextInt();
-                        int re=0;
                         if(row1<1||row1>9||col1<1||col1>9)
                         {
                             System.out.println("Invalid Position, try again.");
@@ -106,9 +105,11 @@ public class Run
                         {
                             do
                             {
+                            int re=0;
                             //ships can only extend to right or bot, (1=horizontal, 2=vertical)
                             System.out.println("Choose the type of your ship(1.Hor or 2.Ver)");
                             int type=s.nextInt();
+
                             if (type==1)
                             {
                                 for (int a=row1;a<=row1;a++)
@@ -251,7 +252,6 @@ public class Run
                         System.out.println(" ship (row and col)");
                         row2=s.nextInt();
                         col2=s.nextInt();
-                        int re2=0;
                         if(row1<1||row1>9||col1<1||col1>9)
                         {
                             System.out.println("Invalid Position, try again.");
@@ -261,6 +261,7 @@ public class Run
                             do
                             {
                             //ships can only extend to right or bot, (1=horizontal, 2=vertical)
+                            int re2=0;
                             System.out.println("Choose the type of your ship(1.Hor or 2.Ver)");
                             int type2=s.nextInt();
                             if (type2==1)
@@ -472,8 +473,6 @@ public class Run
         }
     }while(p1hit!=des || p2hit!=des);
 //-------------------------------------------------------------------------------------- 
-
-
         if(p1hit==des)
         {
             System.out.println("Player1 wins, gameover.");
