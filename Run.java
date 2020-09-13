@@ -44,7 +44,20 @@ public class Run
         int row2=0;
         char string2;
         int col2=0;
-        
+
+        //Gaming Instructions
+        System.out.println();
+        System.out.println("========== WELCOME TO BATTLESHIP ==========");
+        System.out.println();
+        System.out.println("INSTRUCTIONS: ");
+        System.out.println("+ There shall only be 2 players.");
+        System.out.println("+ Both players will decide on a number of ships (1-5), together and their locations (1-9, A-I), individually.");
+        System.out.println("+ Each player will guess the placement of the other player's ships.");
+        System.out.println("+ The first player to sink all the ships of the other's wins!");
+        System.out.println("Let's start!");
+        System.out.println();
+
+//-----------------------------------------------------------------------------------------------------------------   
         
         //Started set
         for(int i=0;i<10;i++)
@@ -59,7 +72,7 @@ public class Run
         }
         do
         {
-        System.out.println("Players, please select the number of ships(1-5)");
+        System.out.println("Players, please select the number of ships (1-5).");
         ShipNum=s.nextInt();
         if (ShipNum<1||ShipNum>5)
         {
@@ -74,6 +87,7 @@ public class Run
 //-----------------------------------------------------------------------------------------------------------------
         //player1 started
         //place ship player1
+        System.out.println();
         System.out.println("Player 1's turn");
         for (int x=1;x<=ShipNum;x++)
         {
@@ -128,7 +142,7 @@ public class Run
                             {
                             re=0;
                             //ships can only extend to right or bot, (1=horizontal, 2=vertical)
-                            System.out.println("Choose the type of your ship(1.Hor or 2.Ver)");
+                            System.out.println("Choose the type of your ship (1. Hor or 2. Ver)");
                             int type=s.nextInt();
 
                             if (type==1)
@@ -238,7 +252,7 @@ public class Run
         do
         {
             conti=0;
-            System.out.println("Do you want to continue?(1.Yes  2.No)");
+            System.out.println("Do you want to continue? (1. Yes  2. No)");
             conti=s.nextInt();
 
             if(conti==1)
@@ -263,6 +277,7 @@ public class Run
 //------------------------------------------------------------------------------------
         //player2 started
         //place ship player2
+        System.out.println();
         System.out.println("Player 2's turn");
         for (int x=1;x<=ShipNum;x++)
         {
@@ -316,7 +331,7 @@ public class Run
                             {
                             //ships can only extend to right or bot, (1=horizontal, 2=vertical)
                             re2=0;
-                            System.out.println("Choose the type of your ship(1.Hor or 2.Ver)");
+                            System.out.println("Choose the type of your ship (1. Hor or 2. Ver)");
                             int type2=s.nextInt();
                             if (type2==1)
                             {
@@ -431,7 +446,7 @@ public class Run
         do
         {
             conti=0;
-            System.out.println("Do you want to continue?(1.Yes  2.No)");
+            System.out.println("Do you want to continue? (1. Yes  2. No)");
             conti=s.nextInt();
 
             if(conti==1)
@@ -457,7 +472,7 @@ public class Run
     //shot
     do
     {
-        System.out.println("Player 1, enter your choice: 1.View your map  2. View enemy's map  3. Shoot");
+        System.out.println("Player 1, enter your choice: 1. View your map  2. View enemy's map  3. Shoot");
         choice=s.nextInt();
         
         if (choice==1)//print players map
@@ -533,7 +548,7 @@ public class Run
             do
             {
                 retry=0;
-                System.out.println("P1, Enter the position you want to shoot (row(1-9) and col(A-1)) ");
+                System.out.println("Player 1, Enter the position you want to shoot (row(1-9) and col(A-1). ");
                 int p1r=s.nextInt(); //p1 shoot row
                 string1=s.next().charAt(0);
                 int p1c = chartonum(string1);
@@ -603,7 +618,7 @@ public class Run
             do
             {
                 conti=0;
-                System.out.println("Do you want to continue?((1.Yes  2.No)");
+                System.out.println("Do you want to continue? (1. Yes  2. No)");
                 conti=s.nextInt();
                 if(conti==1)
                 {
@@ -626,7 +641,7 @@ public class Run
 
             do
             {
-                System.out.println("Player 2, enter your choice: 1.View your map  2. View enemy's map  3. Shoot");
+                System.out.println("Player 2, enter your choice: 1. View your map  2. View enemy's map  3. Shoot");
                 choice=s.nextInt();
 
                 if(choice==1)//p2 view map
@@ -700,7 +715,7 @@ public class Run
                     do
                     {
                         retry=0;
-                        System.out.println("P2, enter the position you want to shoot (row(1-9) and col(A-I)) ");
+                        System.out.println("Player 2, enter the position you want to shoot (row(1-9) and col(A-I). ");
                         int p2r=s.nextInt(); //p2 shoot row
                         string2=s.next().charAt(0);
                         int p2c = chartonum(string2);
@@ -782,9 +797,10 @@ public class Run
             System.out.println("Player 2 wins, game over.");
         }
 
+    System.out.println();
     System.out.println("Game Summary");
-    System.out.println("Player 1-----miss: "+ p1miss + "  hit: "+ p1hit);
-    System.out.println("Player 2-----miss: "+ p2miss + "  hit: "+ p2hit);
+    System.out.println("Player 1 ----- Miss: "+ p1miss + "  Hit: "+ p1hit);
+    System.out.println("Player 2 ----- Miss: "+ p2miss + "  Hit: "+ p2hit);
     s.close();
     }
     /**
