@@ -234,6 +234,31 @@ public class Run
 			}
 			System.out.println();
 		}
+        do
+        {
+            conti=0;
+            System.out.println("Do you want to continue?(1.Yes  2.No)");
+            conti=s.nextInt();
+
+            if(conti==1)
+            {
+                break;
+            }
+            else if(conti==2)
+            {
+                System.out.println("There is no turning back.");
+            }
+            else
+            {
+                System.out.println("Bad choice.");
+            }
+        }while(conti!=1);
+        
+        for (int clear=0;clear<50;clear++) //clear the terminal
+        {
+            System.out.println();
+        }
+
 //------------------------------------------------------------------------------------
         //player2 started
         //place ship player2
