@@ -10,7 +10,8 @@ public class Run
      * if the player would like ships to be horizontal or vertical if there is more than one ship. This function also handles
      * error handling for incorrect player input.
      * It does these things for both players and also handles printing the maps. It also allows for the players to guess
-     * positions for the enemy and handles printing game data for when the game is ended.
+     * positions for the enemy and handles printing game data for when the game is ended. There is also functionality
+     * to that asks if the user would like to continue the game and chose to view different boards or shoot.
      * @param String[] args
      * @return It is void so returns nothing!
      */
@@ -73,7 +74,7 @@ public class Run
 //-----------------------------------------------------------------------------------------------------------------
         //player1 started
         //place ship player1
-        System.out.println("Player1's turn");
+        System.out.println("Player 1's turn");
         for (int x=1;x<=ShipNum;x++)
         {
             if(x==1) //ship size = 1
@@ -262,7 +263,7 @@ public class Run
 //------------------------------------------------------------------------------------
         //player2 started
         //place ship player2
-        System.out.println("Player2's turn");
+        System.out.println("Player 2's turn");
         for (int x=1;x<=ShipNum;x++)
         {
             if(x==1) //ship size = 1
@@ -456,7 +457,7 @@ public class Run
     //shot
     do
     {
-        System.out.println("Player1, enter your choice: 1.View your map  2. View enemy's map  3. Shot");
+        System.out.println("Player 1, enter your choice: 1.View your map  2. View enemy's map  3. Shoot");
         choice=s.nextInt();
         
         if (choice==1)//print players map
@@ -625,7 +626,7 @@ public class Run
 
             do
             {
-                System.out.println("Player2, enter your choice: 1.View your map  2. View enemy's map  3. Shot");
+                System.out.println("Player 2, enter your choice: 1.View your map  2. View enemy's map  3. Shoot");
                 choice=s.nextInt();
 
                 if(choice==1)//p2 view map
