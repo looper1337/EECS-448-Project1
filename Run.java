@@ -371,8 +371,9 @@ public class Run
 
 
 
-    do
+    for(int repeat=0;repeat<105;repeat++)
     {
+        repeat=0;
 //--------------------------------------------------------------------------------
     //player1's turned to shot
     //shot
@@ -386,8 +387,10 @@ public class Run
             shot[x][y]=1;
         }
     }
-
+        
         // print p2'map after attacked by p1
+        p1hit=0;
+        p1miss=0;
        	for(int i=0;i<10;i++)
 		{
 			for(int j=0;j<10;j++)
@@ -402,13 +405,13 @@ public class Run
                 }                
                 else if(ship2[i][j]==1 & shot[i][j]==1)
                 {
-                    p1hit=p1hit+0+1;
-                    System.out.print("X  ");                    
+                    System.out.print("X  ");    
+                    p1hit=p1hit+1;                
                 }
                 else if(ship2[i][j]!=1&shot[i][j]==1)
                 {
-                    p1miss=p1miss+0+1;
-                    System.out.print("*  ");                    
+                    System.out.print("*  ");       
+                    p1miss=p1miss+1;             
                 }
                 else
                 {
@@ -416,8 +419,9 @@ public class Run
                 }
  			
 			}
-			System.out.println();
+			System.out.println("hit time:"+ p1hit);
 		}
+        System.out.println("hit time:"+ p1hit);
 //----------------------------------------------------------------------------------------------------
     //player2's turned to shot
     //shot
@@ -433,8 +437,10 @@ public class Run
                     shot2[x][y]=1;
                 }
             }
-
+            
             // print p1'map after attacked by p2
+            p2hit=0;
+            p2miss=0;
             for(int i=0;i<10;i++)
             {
                 for(int j=0;j<10;j++)
@@ -450,15 +456,14 @@ public class Run
                     
                     else if(ship[i][j]==1 & shot2[i][j]==1)
                     {
-                        p2hit=p2hit+0+1;
                         System.out.print("X  ");
+                        p2hit=p2hit+1;
                                         
                     }
                     else if(ship[i][j]!=1 & shot2[i][j]==1)
                     {
-                        p2miss=p2miss+0+1;
                         System.out.print("*  ");
-                        
+                        p2miss=p2miss+1;
                     }
                     else
                     {
@@ -468,12 +473,13 @@ public class Run
                 }
                 System.out.println();
             }
+            System.out.println("hit times:"+p2hit );
         }
         else if (p1hit==des || p2hit==des)
         {
             break;
         }
-    }while(p1hit!=des || p2hit!=des);
+    }
 //-------------------------------------------------------------------------------------- 
         if(p1hit==des)
         {
