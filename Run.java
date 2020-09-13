@@ -309,59 +309,63 @@ public class Run
 //----------------------------------------------------------------------------------------------------
     //player2's turned to shot
     //shot
-    System.out.println("P2, enter the position you want to shot (row and col) ");
-    int p2r=s.nextInt(); //p2 shot row
-    int p2c=s.nextInt(); //p2 shot col
-    for (int x=p2r;x<=p2r;x++)
-    {
-        for (int y=p2c;y<=p2c;y++)
+        if(hit1!=des)
         {
-            shot2[x][y]=1;
-        }
-    }
+            System.out.println("P2, enter the position you want to shot (row and col) ");
+            int p2r=s.nextInt(); //p2 shot row
+            int p2c=s.nextInt(); //p2 shot col
+            for (int x=p2r;x<=p2r;x++)
+            {
+                for (int y=p2c;y<=p2c;y++)
+                {
+                    shot2[x][y]=1;
+                }
+            }
 
-        // print p1'map after attacked by p2
-       	for(int i=0;i<10;i++)
-		{
-			for(int j=0;j<10;j++)
-			{
-                if (i==0&j!=0)
+            // print p1'map after attacked by p2
+            for(int i=0;i<10;i++)
+            {
+                for(int j=0;j<10;j++)
                 {
-                    System.out.print(coor[j]+"  ");
-                }
-                else if (j==0&&i!=0)
-                {
-                    System.out.print(i+"  ");
-                }    
+                    if (i==0&j!=0)
+                    {
+                        System.out.print(coor[j]+"  ");
+                    }
+                    else if (j==0&&i!=0)
+                    {
+                        System.out.print(i+"  ");
+                    }    
+                    
+                    else if(ship[i][j]==1 & shot2[i][j]==1)
+                    {
+                        hit2++;
+                        System.out.print("X  ");
+                                        
+                    }
+                    else if(ship[i][j]!=1 & shot2[i][j]==1)
+                    {
+                        miss2++;
+                        System.out.print("*  ");
+                        
+                    }
+                    else
+                    {
+                        System.out.print("~  ");
+                    }
                 
-                else if(ship[i][j]==1 & shot2[i][j]==1)
-                {
-                    hit2++;
-                    System.out.print("X  ");
-                                     
                 }
-                else if(ship[i][j]!=1 & shot2[i][j]==1)
-                {
-                    miss2++;
-                    System.out.print("*  ");
-                       
-                }
-                else
-                {
-                    System.out.print("~  ");
-                }
- 			
-			}
-			System.out.println();
-		}
+                System.out.println();
+            }
+        }
+        else if (hit1==des || hit2==des)
+        {
+            break;
+        }
     }while(hit1!=des || hit2!=des);
 //-------------------------------------------------------------------------------------- 
 
-        if (hit1==hit2 && hit1==des)
-        {
-            System.out.println("Draw");
-        }
-        else if(hit1==des)
+
+        if(hit1==des)
         {
             System.out.println("Player1 wins, gameover.");
         }
