@@ -375,8 +375,9 @@ public class Run
 
 
 
-    do
+    for(int stop=0;stop<99;stop++)
     {
+        stop=0;
 //--------------------------------------------------------------------------------
     //player1's turned to shot
     //shot
@@ -482,7 +483,11 @@ public class Run
                 break;
             }
         }
-    }while(p1hit!=des||p2hit!=des);
+        else if(p1hit==des)
+        {
+            break;
+        }
+    }
 //-------------------------------------------------------------------------------------- 
         if(p1hit==des)
         {
