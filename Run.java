@@ -17,6 +17,7 @@ public class Run
         int p1hit=0;
         int p1miss=0;
         int row1=0;
+        char string1;
         int col1=0;
         //player2 var
         
@@ -25,6 +26,7 @@ public class Run
         int p2hit=0;
         int p2miss=0;
         int row2=0;
+        char string2;
         int col2=0;
         
         
@@ -56,7 +58,7 @@ public class Run
 //-----------------------------------------------------------------------------------------------------------------
         //player1 started
         //place ship player1
-        System.out.println("Player1's turned");
+        System.out.println("Player 1's turn");
         for (int x=1;x<=ShipNum;x++)
         {
             if(x==1) //ship size = 1
@@ -65,9 +67,10 @@ public class Run
                 {
                     System.out.print("Enter the position of your 1*");
                     System.out.print(x);
-                    System.out.println(" ship (row and col)");
+                    System.out.println(" ship (row(1-9) and col(A-I))");
                     row1=s.nextInt();
-                    col1=s.nextInt();
+                    string1=s.next().charAt(0);
+                    col1 = chartonum(string1);
                     if(row1<1||row1>9||col1<1||col1>9)
                     {
                         System.out.println("Invalid Position, try again.");
@@ -94,9 +97,10 @@ public class Run
                         block=0;
                         System.out.print("Enter the position of your 1*");
                         System.out.print(x);
-                        System.out.println(" ship (row and col)");
+                        System.out.println(" ship (row(1-9) and col(A-I))");
                         row1=s.nextInt();
-                        col1=s.nextInt();
+                        string1=s.next().charAt(0);
+                        col1 = chartonum(string1);
                         int re=0;
                         if(row1<1||row1>9||col1<1||col1>9)
                         {
@@ -218,7 +222,7 @@ public class Run
 //------------------------------------------------------------------------------------
         //player2 started
         //place ship player2
-        System.out.println("Player2's turned");
+        System.out.println("Player 2's turn");
         for (int x=1;x<=ShipNum;x++)
         {
             if(x==1) //ship size = 1
@@ -227,10 +231,11 @@ public class Run
                 {    
                     System.out.print("Enter the position of your 1*");
                     System.out.print(x);
-                    System.out.println(" ship (row and col)");
+                    System.out.println(" ship (row(1-9) and col(A-I))");
                     row2=s.nextInt();
-                    col2=s.nextInt();
-                    if(row1<1||row1>9||col1<1||col1>9)
+                    string2=s.next().charAt(0);
+                    col2 = chartonum(string2);
+                    if(row2<1||row2>9||col2<1||col2>9)
                     {
                         System.out.println("Invalid Position, try again.");
                     }
@@ -252,11 +257,12 @@ public class Run
                         block=0;
                         System.out.print("Enter the position of your 1*");
                         System.out.print(x);
-                        System.out.println(" ship (row and col)");
+                        System.out.println(" ship (row(1-9) and col(A-I))");
                         row2=s.nextInt();
-                        col2=s.nextInt();
+                        string2=s.next().charAt(0);
+                        col2 = chartonum(string2);
                         int re2=0;
-                        if(row1<1||row1>9||col1<1||col1>9)
+                        if(row2<1||row2>9||col2<1||col2>9)
                         {
                             System.out.println("Invalid Position, try again.");
                         }
@@ -342,7 +348,7 @@ public class Run
                             }
                             }while(re2==1);
                         }
-                    }while(row1<1||row1>9||col1<1||col1>9);
+                    }while(row2<1||row2>9||col2<1||col2>9);
                 }while(block==1);
             }
         }
@@ -379,11 +385,12 @@ public class Run
     {
         stop=0;
 //--------------------------------------------------------------------------------
-    //player1's turned to shot
+    //player1's turned to shoot
     //shot
-    System.out.println("P1, Enter the position you want to shot (row and col) ");
+    System.out.println("P1, Enter the position you want to shoot (row(1-9) and col(A-1)) ");
     int p1r=s.nextInt(); //p1 shot row
-    int p1c=s.nextInt(); //p1 shot col
+    string1=s.next().charAt(0);
+    int p1c = chartonum(string1);
     for (int x=p1r;x<=p1r;x++)
     {
         for (int y=p1c;y<=p1c;y++)
@@ -409,12 +416,12 @@ public class Run
                 }                
                 else if(ship2[i][j]==1 & shot[i][j]==1)
                 {
-                    System.out.print("X  ");    
+                    System.out.print("H  ");    
                     p1hit=p1hit+1;                
                 }
                 else if(ship2[i][j]!=1&shot[i][j]==1)
                 {
-                    System.out.print("*  ");       
+                    System.out.print("M  ");       
                     p1miss=p1miss+1;             
                 }
                 else
@@ -427,13 +434,14 @@ public class Run
 		}
         System.out.println();
 //----------------------------------------------------------------------------------------------------
-    //player2's turned to shot
-    //shot
+    //player2's turned to shoot
+    //shoot
         if(p1hit!=des)
         {
-            System.out.println("P2, enter the position you want to shot (row and col) ");
-            int p2r=s.nextInt(); //p2 shot row
-            int p2c=s.nextInt(); //p2 shot col
+            System.out.println("P2, enter the position you want to shoot (row(1-9) and col(A-I)) ");
+            int p2r=s.nextInt(); //p2 shoot row
+            string2=s.next().charAt(0);
+            int p2c = chartonum(string2);
             for (int x=p2r;x<=p2r;x++)
             {
                 for (int y=p2c;y<=p2c;y++)
@@ -460,13 +468,13 @@ public class Run
                     
                     else if(ship[i][j]==1 & shot2[i][j]==1)
                     {
-                        System.out.print("X  ");
+                        System.out.print("H  ");
                         p2hit=p2hit+1;
                                         
                     }
                     else if(ship[i][j]!=1 & shot2[i][j]==1)
                     {
-                        System.out.print("*  ");
+                        System.out.print("M  ");
                         p2miss=p2miss+1;
                     }
                     else
@@ -491,18 +499,59 @@ public class Run
 //-------------------------------------------------------------------------------------- 
         if(p1hit==des)
         {
-            System.out.println("Player1 wins, gameover.");
+            System.out.println("Player 1 wins, game over.");
         }
         else if (p2hit==des)
         {
-            System.out.println("Player2 wins, gameover.");
+            System.out.println("Player 2 wins, game over.");
         }
 
     System.out.println("Game Summary");
-    System.out.println("Player1-----miss: "+ p1miss + "  hit: "+ p1hit);
-    System.out.println("Player2-----miss: "+ p2miss + "  hit: "+ p2hit);
-
+    System.out.println("Player 1-----miss: "+ p1miss + "  hit: "+ p1hit);
+    System.out.println("Player 2-----miss: "+ p2miss + "  hit: "+ p2hit);
+    s.close();
     } 
+    public static int chartonum (char char1)
+    {
+        int num = 0;
+        if(char1 == 'A')
+        {
+            num = 1;
+        }
+        else if(char1 == 'B')
+        {
+            num = 2;
+        }
+        else if(char1 == 'C')
+        {
+            num = 3;
+        }
+        else if(char1 == 'D')
+        {
+            num = 4;
+        }
+        else if(char1 == 'E')
+        {
+            num = 5;
+        }
+        else if(char1 == 'F')
+        {
+            num = 6;
+        }
+        else if(char1 == 'G')
+        {
+            num = 7;
+        }
+        else if(char1 == 'H')
+        {
+            num = 8;
+        }
+        else if(char1 == 'I')
+        {
+            num = 9;
+        }
+        return(num);
+    }
 }
 
 
