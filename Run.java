@@ -122,6 +122,7 @@ public class Run
                                         {
                                             block=1;
                                             ship[a][b]=ship[a][b]-1;
+                                            ship[a][b-1]=0;
                                             System.out.println("Invalid Position, try again.");
                                             break;
                                         }
@@ -154,6 +155,7 @@ public class Run
                                         {
                                             block=1;
                                             ship[a][b]=ship[a][b]-1;
+                                            ship[a-1][b]=0;
                                             System.out.println("Invalid Position, try again.");
                                         } 
                                         else if(ship[a][b]==2)
@@ -239,7 +241,7 @@ public class Run
                             ship2[a][b]=ship2[a][b]+1;                       
                         }
                     }
-                }while(row1<1||row1>9||col1<1||col1>9);
+                }while(row2<1||row2>9||col2<1||col2>9);
             }
             else //ship size > 1*1
             {
@@ -277,6 +279,7 @@ public class Run
                                         {
                                             block=1;
                                             ship2[a][b]=ship2[a][b]-1;
+                                            ship2[a][b-1]=0;
                                             System.out.println("Invalid Position, try again.");
                                             break;
                                         }
@@ -309,6 +312,7 @@ public class Run
                                         {
                                             block=1;
                                             ship2[a][b]=ship2[a][b]-1;
+                                            ship2[a-1][b]=0;
                                             System.out.println("Invalid Position, try again.");
                                         } 
                                         else if(ship2[a][b]==2)
@@ -371,9 +375,8 @@ public class Run
 
 
 
-    for(int repeat=0;repeat<105;repeat++)
+    do
     {
-        repeat=0;
 //--------------------------------------------------------------------------------
     //player1's turned to shot
     //shot
@@ -479,7 +482,7 @@ public class Run
                 break;
             }
         }
-    }
+    }while(p1hit!=des||p2hit!=des);
 //-------------------------------------------------------------------------------------- 
         if(p1hit==des)
         {
