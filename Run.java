@@ -131,10 +131,10 @@ public class Run
                                             ship[a][b-1]=0;
                                             break;
                                         }
-                                        else if(b+x > 11)
+                                        else if(col1+x>10)
                                         {
                                             block=1;
-                                            ship[a][b-1]=0;
+                                            ship[a][b]=0;
                                             System.out.println("Invalid Position, try again.");
                                             break;
                                         }                      
@@ -161,10 +161,10 @@ public class Run
                                             ship[a][b]=ship[a][b]-1;
                                             ship[a-1][b]=0;
                                         }
-                                        else if (a+x>11)
+                                        else if (row1+x>10)
                                         {
                                             block=1;
-                                            ship[a-1][b]=0;
+                                            ship[a][b]=0;
                                             System.out.println("Invalid Position, try again.");
                                         }                
                                     }
@@ -285,10 +285,10 @@ public class Run
                                             ship2[a][b-1]=0;
                                             break;
                                         }
-                                        else if(b+x > 11)
+                                        else if(col2+x > 10)
                                         {
                                             block=1;
-                                            ship2[a][b-1]=0;
+                                            ship2[a][b]=0;
                                             System.out.println("Invalid Position, try again.");
                                             break;
                                         }                      
@@ -301,7 +301,7 @@ public class Run
                                 {
                                     for (int b=col2;b<=col2;b++)
                                     {
-                                        ship2[a][b]=ship2[a][b]+1;
+                                        ship2[a][b]=ship2[a][b]+1;   
                                         if(ship2[a-1][b]==1&&ship2[a][b]==2)//example: 3 ships, 1*1 in (3,3), 1*2 in (1,3),(2,3),if placed 1*3 ship in (2,3)
                                         {
                                             block=1;
@@ -315,12 +315,16 @@ public class Run
                                             ship2[a][b]=ship2[a][b]-1;
                                             ship2[a-1][b]=0;
                                         }
-                                        else if (a+x>11)
+                                        else if (row2+x>10)
                                         {
                                             block=1;
-                                            ship2[a-1][b]=0;
+                                            ship2[a][b]=0;
                                             System.out.println("Invalid Position, try again.");
-                                        }                        
+                                        }                
+                                    }
+                                    if(block==1)
+                                    {
+                                        break;
                                     }
                                 }
                             }
