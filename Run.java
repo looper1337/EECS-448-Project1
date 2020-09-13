@@ -49,9 +49,9 @@ public class Run
         }
         }while(ShipNum<1||ShipNum>5);
 
-        for (int i=1;i<=ShipNum;i++) // the goal
+        for (int d=1;d<=ShipNum;d++) // the goal
         {
-            des=des+i;
+            des=des+d;
         }
 //-----------------------------------------------------------------------------------------------------------------
         //player1 started
@@ -97,6 +97,7 @@ public class Run
                         System.out.println(" ship (row and col)");
                         row1=s.nextInt();
                         col1=s.nextInt();
+                        int re=0;
                         if(row1<1||row1>9||col1<1||col1>9)
                         {
                             System.out.println("Invalid Position, try again.");
@@ -105,7 +106,7 @@ public class Run
                         {
                             do
                             {
-                            int re=0;
+                            re=0;
                             //ships can only extend to right or bot, (1=horizontal, 2=vertical)
                             System.out.println("Choose the type of your ship(1.Hor or 2.Ver)");
                             int type=s.nextInt();
@@ -252,6 +253,7 @@ public class Run
                         System.out.println(" ship (row and col)");
                         row2=s.nextInt();
                         col2=s.nextInt();
+                        int re2=0;
                         if(row1<1||row1>9||col1<1||col1>9)
                         {
                             System.out.println("Invalid Position, try again.");
@@ -261,7 +263,7 @@ public class Run
                             do
                             {
                             //ships can only extend to right or bot, (1=horizontal, 2=vertical)
-                            int re2=0;
+                            re2=0;
                             System.out.println("Choose the type of your ship(1.Hor or 2.Ver)");
                             int type2=s.nextInt();
                             if (type2==1)
