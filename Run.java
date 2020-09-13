@@ -41,7 +41,7 @@ public class Run
         {
             des=des+i;
         }
-//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
         //player1 started
         //place ship player1
         System.out.println("Player1's turned");
@@ -90,6 +90,8 @@ public class Run
                                     block=1;
                                     System.out.println("Invalid Position, try again.");
                                     ship[a][b]=ship[a][b]-1;
+                                    ship[a][b-1]=0;
+                                    break;
                                 }                      
                             }
                         }
@@ -100,13 +102,18 @@ public class Run
                         {
                             for (int b=col1;b<=col1;b++)
                             {
-                                ship[a][b]=ship[a][b]+1;
+                                ship[a][b]=ship[a][b]+1;    
                                 if(ship[a][b]==2)
                                 {
                                     block=1;
                                     System.out.println("Invalid Position, try again.");
                                     ship[a][b]=ship[a][b]-1;
-                                }                        
+                                    ship[a-1][b]=0;
+                                }                  
+                            }
+                            if(block==1)
+                            {
+                                break;
                             }
                         }
                     }
@@ -120,7 +127,7 @@ public class Run
             }
         }
 
-        //print map for player
+        //print map for player-----------------------------------------------------
        	for(int i=0;i<10;i++)
 		{
 			for(int j=0;j<10;j++)
@@ -139,13 +146,13 @@ public class Run
                 }
                 else
                 {
-                System.out.print("0  ");
+                System.out.print("~  ");
                 }
  			
 			}
 			System.out.println();
 		}
-//---------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------
         //player2 started
         //place ship player2
         System.out.println("Player2's turned");
@@ -224,7 +231,7 @@ public class Run
             }
         }
 
-        //print map for player
+        //print map for player---------------------------------------------------------
        	for(int i=0;i<10;i++)
 		{
 			for(int j=0;j<10;j++)
@@ -243,7 +250,7 @@ public class Run
                 }
                 else
                 {
-                System.out.print("0  ");
+                System.out.print("~  ");
                 }
  			
 			}
@@ -254,7 +261,7 @@ public class Run
 
     do
     {
-//---------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------
     //player1's turned to shot
     //shot
     System.out.println("P1, Enter the position you want to shot (row and col) ");
@@ -281,19 +288,19 @@ public class Run
                 {
                     System.out.print(i+"  ");
                 }                
-                else if(ship2[i][j]==1&shot[i][j]==1)
+                else if(ship2[i][j]==1 & shot[i][j]==1)
                 {
-                    hit1=hit1+1;
+                    hit1++;
                     System.out.print("X  ");                    
                 }
                 else if(ship2[i][j]!=1&shot[i][j]==1)
                 {
-                    miss1=miss1+1;
+                    miss1++;
                     System.out.print("*  ");                    
                 }
                 else
                 {
-                    System.out.print("0  ");
+                    System.out.print("~  ");
                 }
  			
 			}
@@ -329,26 +336,32 @@ public class Run
                 
                 else if(ship[i][j]==1 & shot2[i][j]==1)
                 {
-                    hit2=hit2+1; 
+                    hit2++;
                     System.out.print("X  ");
                                      
                 }
                 else if(ship[i][j]!=1 & shot2[i][j]==1)
                 {
-                    miss2=miss2+1; 
+                    miss2++;
                     System.out.print("*  ");
                        
                 }
                 else
                 {
-                    System.out.print("0  ");
+                    System.out.print("~  ");
                 }
  			
 			}
 			System.out.println();
 		}
-        
-        if(hit1==des)
+    }while(hit1!=des || hit2!=des);
+//-------------------------------------------------------------------------------------- 
+
+        if (hit1==hit2 && hit1==des)
+        {
+            System.out.println("Draw");
+        }
+        else if(hit1==des)
         {
             System.out.println("Player1 wins, gameover.");
         }
@@ -356,12 +369,6 @@ public class Run
         {
             System.out.println("Player2 wins, gameover.");
         }
-        else if (hit1==hit2&&hit1==des)
-        {
-            System.out.println("Draw");
-        }
-
-    }while(hit1!=des&&hit2!=des);
 
     System.out.println("Game Summary");
     System.out.println("Player1-----miss: "+ miss1 + "  hit: "+ hit1);
