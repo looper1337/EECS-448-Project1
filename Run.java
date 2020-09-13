@@ -2,6 +2,18 @@ import java.util.Scanner;
 
 public class Run
 {
+    /**
+     * This is the main function and it does a lot. 
+     * The first thing it does is sets up all of our variables and then asks how many ships there should be. 
+     * Then it asks where the ships should be located and takes in input from the players. Since the columns
+     * are chars, it then calls our second function(chartonum) that converts the char to an int. It also asks
+     * if the player would like ships to be horizontal or vertical if there is more than one ship. This function also handles
+     * error handling for incorrect player input.
+     * It does these things for both players and also handles printing the maps. It also allows for the players to guess
+     * positions for the enemy and handles printing game data for when the game is ended.
+     * @param String[] args
+     * @return It is void so returns nothing!
+     */
     public static void main(String[] args)
     {
         Scanner s=new Scanner(System.in);
@@ -511,6 +523,12 @@ public class Run
     System.out.println("Player 2-----miss: "+ p2miss + "  hit: "+ p2hit);
     s.close();
     } 
+    /**
+     * This function converts a char to an int so that the program can use maps easier. When the player wants to place a ship or shoot
+     * the second value is a char that this function converts to its appropriate int on the game board.
+     * @param char char1
+     * @return int num
+     */
     public static int chartonum (char char1)
     {
         int num = 0;
