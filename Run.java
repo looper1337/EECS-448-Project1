@@ -12,8 +12,8 @@ public class Run
      * It does these things for both players and also handles printing the maps. It also allows for the players to guess
      * positions for the enemy and handles printing game data for when the game is ended. There is also functionality
      * to that asks if the user would like to continue the game and chose to view different boards or shoot.
-     * @param String[] args
-     * @return It is void so returns nothing!
+     * @param args takes in a string argument.
+     * 
      */
     public static void main(String[] args)
     {
@@ -806,7 +806,7 @@ public class Run
     /**
      * This function converts a char to an int so that the program can use maps easier. When the player wants to place a ship or shoot
      * the second value is a char that this function converts to its appropriate int on the game board.
-     * @param char char1
+     * @param char1 takes in a char, so that it may convert it to an int.
      * @return int num
      */
     public static int chartonum (char char1)
